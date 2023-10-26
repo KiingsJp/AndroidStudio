@@ -46,7 +46,7 @@ fun novaActivity(){
 
     // VERIFICA A VERSÃO DO ANDROID PARA USAR O MÉTODO RECOMENDADO
     val filme: Filme =
-        if(Build.VERSION.SDK_INT >= 33)
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
             extras?.getParcelable("Filme", Filme::class.java)
         else
             extras?.getParcelable("Filme")
