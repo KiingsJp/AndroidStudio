@@ -79,10 +79,10 @@ Criação de um Fragment:
             .commit()
 
     Fragment:
-        private lateinit var categoria: TextView
-        private lateinit var tipo: TextView
+        private var categoria: TextView? = null
+        private var tipo: TextView? = null
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
-            categoria.text = arguments?.getString("categoria")
-            tipo.text = arguments?.getString("tipo")
+            categoria?.text = arguments?.getString("categoria")
+            tipo?.text = arguments?.getString("tipo")
         }
