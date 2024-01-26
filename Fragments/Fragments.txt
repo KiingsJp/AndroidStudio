@@ -1,0 +1,29 @@
+Criação de um Fragment:
+
+1. Crie um layout (fragment_conversas).
+
+2. Crie uma classe (ConversasFragment) e adicione a extensão Fragment():
+
+    class ConversasFragment : Fragment() 
+
+3. Para o fragmente ser iniciado, adicione o método onCreateView() em sua classe:
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(
+        // Passe o layout do seu fragment
+            R.layout.fragment_conversas,
+            container,
+            false
+        )
+    }
+
+4. Para navegar entre Fragments, utilize: 
+
+      supportFragmentManager
+        .beginTransaction()
+        .replace(R.id.fragment_container, ConversasFragment())
+        .commit()
