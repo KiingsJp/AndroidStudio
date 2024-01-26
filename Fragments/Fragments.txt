@@ -1,7 +1,7 @@
 Criação de um Fragment:
 
 
-1. Crie um layout (fragment_conversas.xml).
+1. Crie um layout (fragment_conversas.xml), nele deve conter um objeto do tipo FragmentContainerView (id = fragment_container).
 
 
 2. Crie uma classe (ConversasFragment.kt) e adicione a extensão Fragment():
@@ -9,7 +9,7 @@ Criação de um Fragment:
     class ConversasFragment : Fragment() 
 
 
-3. Para o fragmente ser iniciado, adicione o método onCreateView() em sua classe:
+3. Para o fragment ser iniciado, adicione o método onCreateView() em sua classe:
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,7 +25,7 @@ Criação de um Fragment:
     }
 
 
-4. Para navegar entre Fragments, utilize: 
+4. Para iniciar e navegar entre Fragments, na MainActivity utilize: 
 
       supportFragmentManager
         .beginTransaction()
@@ -63,3 +63,26 @@ Criação de um Fragment:
         }
     
     }
+
+
+6. Passar parametros da Main para o Fragment, utilize: 
+    Main: 
+        val bundle = bundleOf(
+            "categoria" to "bebidas",
+            "tipo" to "promocao"
+        )
+        val conversasFragment = ConversasFragment()
+        conversasFragment.arguments = bundle
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_container, conversasFragment)
+            .commit()
+
+    Fragment:
+        private lateinit var categoria: TextView
+        private lateinit var tipo: TextView
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            categoria.text = arguments?.getString("categoria")
+            tipo.text = arguments?.getString("tipo")
+        }
