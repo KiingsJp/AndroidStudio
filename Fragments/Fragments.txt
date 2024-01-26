@@ -1,8 +1,8 @@
 Criação de um Fragment:
 
-1. Crie um layout (fragment_conversas).
+1. Crie um layout (fragment_conversas.xml).
 
-2. Crie uma classe (ConversasFragment) e adicione a extensão Fragment():
+2. Crie uma classe (ConversasFragment.kt) e adicione a extensão Fragment():
 
     class ConversasFragment : Fragment() 
 
