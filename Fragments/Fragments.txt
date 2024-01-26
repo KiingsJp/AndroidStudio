@@ -86,3 +86,33 @@ Criação de um Fragment:
             categoria?.text = arguments?.getString("categoria")
             tipo?.text = arguments?.getString("tipo")
         }
+
+
+7. (EXTRA KTX) EXPANSAO KOTLIN JETPACK:
+
+    // Adicione a expansao nas dependencias
+    dependecies{
+        implementation("androidx.fragment:fragment-ktx:1.6.2")
+        ...
+    }
+
+    // Na chamada do Fragment na Main, utilize:
+    val bundle = bundleOf(
+        "categoria" to "bebidas",
+        "tipo" to "promocao"
+    )
+
+//        val conversasFragment = ConversasFragment()
+//        conversasFragment.arguments = bundle
+//        supportFragmentManager
+//            .beginTransaction()
+//            .replace(R.id.fragment_container, conversasFragment)
+//            .commit()
+
+    supportFragmentManager.commit {
+        replace<ConversasFragment>(
+            R.id.fragment_container,
+            args = bundle
+        )
+    }
+    // Não é necessário alterar a classe do fragment
