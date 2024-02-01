@@ -15,6 +15,8 @@ plugins {
 
 // OBJETO PARA SER TRANSFERIDO - TRANSFORMAR EM PARCELABLE
 
+// TAMBÉM PODE SER TRANSFORMADO EM SERIALIZABLE -- assim não precisa do plugin kotlin-parcelize
+
 @Parcelize
 data class Filme(
     val nome: String,
