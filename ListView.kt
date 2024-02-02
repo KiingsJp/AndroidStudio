@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         listViewTeste = findViewById(R.id.list_view)
         listViewTeste.adapter = ArrayAdapter(
-
             this,
             android.R.layout.simple_list_item_1,
             listOf("Elemento 1", "Elemento 2", "Elemento 3", "Elemento 4", "Elemento 4")
