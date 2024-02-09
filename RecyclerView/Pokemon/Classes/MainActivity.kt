@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         pokedexView = findViewById(R.id.rv_pokedex)
         pokedexView.adapter = PokedexAdapter(createPokemons())
         pokedexView.layoutManager = LinearLayoutManager(this)
+        // GridlLayoutManager(context = this, spanCount = 2)
     }
 
     private fun createPokemons(): List<Pokemon> {
