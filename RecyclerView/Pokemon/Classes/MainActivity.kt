@@ -2,6 +2,7 @@ package com.kings.pokedex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
@@ -16,8 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         pokedexView = findViewById(R.id.rv_pokedex)
         pokedexView.adapter = PokedexAdapter(createPokemons())
-        pokedexView.layoutManager = LinearLayoutManager(this)
-        // GridlLayoutManager(context = this, spanCount = 2)
+        pokedexView.layoutManager = GridLayoutManager(this, 2)
     }
 
     private fun createPokemons(): List<Pokemon> {
@@ -39,6 +39,11 @@ class MainActivity : AppCompatActivity() {
                 "Water",
                 R.drawable.squirtle,
                 "Wartortle"
+            ),
+            Pokemon("Pikachu",
+                "Electric",
+                R.drawable.pikachu,
+                "Raichu"
             )
         )
     }
