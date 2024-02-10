@@ -19,7 +19,7 @@ class PokedexAdapter(val pokemons: List<Pokemon>) : Adapter<PokedexAdapter.Poked
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokedexAdapterHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val view = layoutInflater.inflate(R.layout.item_pokedex, parent, false)
+        val view = layoutInflater.inflate(R.layout.card_pokemon, parent, false)
         return PokedexAdapterHolder(view)
     }
 
