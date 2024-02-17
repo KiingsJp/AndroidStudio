@@ -53,6 +53,12 @@ fun novaActivity(){
         else
             extras?.getParcelable("Filme")
 
+    // getSerializable
+    val pokemon = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        intent.getSerializableExtra("pokemon", Pokemon::class.java)
+    } else
+        intent.getSerializableExtra("pokemon") as Pokemon
+
 }
 
  */
