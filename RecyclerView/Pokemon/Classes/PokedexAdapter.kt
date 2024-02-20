@@ -26,6 +26,9 @@ class PokedexAdapter( private val clique: (pokemon: Pokemon)-> Unit) : Adapter<P
 //        notifyDataSetChanged()
     }
 
+    // PARA O VIEWBINDING, UTILIZE:
+    // inner class PokedexAdapterHolder(val binding: CardPokemonBinding) : ViewHolder( binding.root ) { binding.nomePokemon.text = pokemon.nomePokemon  }
+
     inner class PokedexAdapterHolder(view: View) : ViewHolder(view) {
         private val nomePokemon: TextView = view.findViewById(R.id.text_nome)
         private val tipoPokemon: TextView = view.findViewById(R.id.text_tipo)
@@ -45,6 +48,9 @@ class PokedexAdapter( private val clique: (pokemon: Pokemon)-> Unit) : Adapter<P
         }
     }
 
+    // PARA O VIEWBINDING, UTILIZE:
+    // onCreateViewHold(parent: ViewGroup, viewType: Int): PokedexAdapterHolder { val binding = CardPokemonBinding.inflate( layoutInflater, parent, false); return PokedexAdapterHolder(binding); }
+ 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokedexAdapterHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.card_pokemon, parent, false)
