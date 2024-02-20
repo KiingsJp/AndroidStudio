@@ -7,19 +7,23 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.kings.pokedex.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var pokedexView: RecyclerView
     private lateinit var pokedexAdapter: PokedexAdapter
     private lateinit var imgPokebola: ImageView
-
+    
+    private val binding by lazy { 
+        ActivityMainBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        imgPokebola = findViewById(R.id.imgv_pokebola)
+        imgPokebola = binding.imgvPokebola // findViewById(R.id.imgv_pokebola)
 
         pokedexAdapter = PokedexAdapter { pokemon ->
             val intent = Intent(this, PokeActivity::class.java)
@@ -28,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
         pokedexAdapter.atualizarLista(createPokemons())
 
-        pokedexView = findViewById(R.id.rv_pokedex)
+        pokedexView = binding.rvPokedex // findViewById(R.id.rv_pokedex)
         pokedexView.adapter = pokedexAdapter
         pokedexView.layoutManager = GridLayoutManager(this, 2)
 
