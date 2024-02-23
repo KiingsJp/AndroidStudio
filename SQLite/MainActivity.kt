@@ -73,10 +73,10 @@ class MainActivity : AppCompatActivity() {
     private fun atualizar() {
         val valores = ContentValues().let { valores ->
             valores.put(DatabaseHelper.NOME_PRODUTO, "Produto Atualizado")
-            valores.put(DatabaseHelper.VALOR_PRODUTO, 1500.00)
+            valores.put(DatabaseHelper.VALOR_PRODUTO, 1500.75)
             valores
         }
-        val args = arrayOf<String>("3", "3900.00")
+        val args = arrayOf<String>("3", "3900.80")
         db.writableDatabase.update(
             DatabaseHelper.TABELA_PRODUTOS,
             valores, "${DatabaseHelper.ID_PRODUTO} = ? AND ${DatabaseHelper.VALOR_PRODUTO} = ?",
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun remover() {
-        val args = arrayOf<String>("5", "3900")
+        val args = arrayOf<String>("5", "3100.50")
         db.writableDatabase.delete(
             DatabaseHelper.TABELA_PRODUTOS,
             "${DatabaseHelper.ID_PRODUTO} = ? AND ${DatabaseHelper.VALOR_PRODUTO} = ?",
@@ -103,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         val produto = binding.textProduto.text
         val valores = ContentValues().let { valores ->
             valores.put(DatabaseHelper.NOME_PRODUTO, produto.toString())
-            valores.put(DatabaseHelper.VALOR_PRODUTO, 3000.00)
+            valores.put(DatabaseHelper.VALOR_PRODUTO, 3000.10)
             valores
         }
         db.writableDatabase.insert(DatabaseHelper.TABELA_PRODUTOS, null, valores)
