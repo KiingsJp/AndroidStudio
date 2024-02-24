@@ -14,7 +14,6 @@ class DatabaseHelper(private val context: Context): SQLiteOpenHelper(context,"pr
         const val ID_PRODUTO = "ID"
         const val NOME_PRODUTO = "NOME"
         const val VALOR_PRODUTO = "VALOR"
-
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
