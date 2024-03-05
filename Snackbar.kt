@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(activityMainBinding.root)
+        setContentView(activityMainBinding.root) 
 
         with(activityMainBinding){
             btnExecutar.setOnClickListener{
