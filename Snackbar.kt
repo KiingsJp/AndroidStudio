@@ -6,7 +6,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.kings.project.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-
     private val activityMainBinding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
