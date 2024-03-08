@@ -36,7 +36,6 @@ Criação de um Fragment:
 5. Utilizar btn dentro do Fragment:
 
     class ConversasFragment : Fragment() {
-
         private lateinit var btnHelloWorld: Button
         private lateinit var txtHelloWorld: TextView
     
