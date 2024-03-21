@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                     }
                     .setPositiveButton("ACEITAR") { dialog, position ->
                         Toast.makeText(it.context, "Aceitado", Toast.LENGTH_SHORT).show()
-                    }
+                    } 
                     .setNeutralButton("Ajuda") { dialog, position ->
                         Toast.makeText(it.context, "Ajuda", Toast.LENGTH_SHORT).show()
                     }
